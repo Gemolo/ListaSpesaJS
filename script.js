@@ -3,18 +3,21 @@ let listaDOM = null
 
 function setListaTagLI(arr){
 	for(let i = 0; i < arr.length; i++){
-		var li = document.createElement('li')
-		listaDOM.appendChild(li)
-		li.innerHTML = arr[i]
+		add(arr[i])
 	}
 }
 
-function add(){
+function addLista(){
 	let input = document.getElementById("addInput").value
+	add(input)
 	arrEl.push(input)
+}
+
+function add(valueToAdd){
 	var li = document.createElement('li')
 	listaDOM.appendChild(li)
-	li.innerHTML = input
+	li.innerHTML = valueToAdd
+	li.className = "list-group-item"
 	document.getElementById("addInput").value = ""
 }
 
